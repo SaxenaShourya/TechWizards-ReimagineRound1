@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Futura";
+  src: url("/fonts/FuturaOblique.ttf");
+}
+@font-face {
+  font-family: "FuturaCondensed";
+  src: url("/fonts/FuturaCondensed.ttf");
+}
+@font-face {
+  font-family: "FuturaExtraBold";
+  src: url("/fonts/FuturaExtraBold.ttf");
+}
+@font-face {
+  font-family: "FoundersGrotesk";
+  src: url("/fonts/FoundersGroteskSemibold.ttf");
+}
+@font-face {
+  font-family: "ApercuRegular";
+  src: url("/fonts/ApercuRegular.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Futura";
+  src: url("/fonts/FuturaOblique.ttf");
+}
+@font-face {
+  font-family: "FuturaCondensed";
+  src: url("/fonts/FuturaCondensed.ttf");
+}
+@font-face {
+  font-family: "FuturaExtraBold";
+  src: url("/fonts/FuturaExtraBold.ttf");
+}
+@font-face {
+  font-family: "FoundersGrotesk";
+  src: url("/fonts/FoundersGroteskSemibold.ttf");
+}
+@font-face {
+  font-family: "ApercuRegular";
+  src: url("/fonts/ApercuRegular.ttf");
+}
+
+@layer base {
+  /* Hiding Scrollbar */
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Base Styles */
+  body {
+    @apply text-dark-1 font-futuraCondensed scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-foundersGrotesk;
+  }
+}
+@layer utilities {
+  .curve {
+    height: calc(100% + 300px);
+  }
+
+  /* Menu */
+  .burger {
+    @apply w-full;
+    &::after,
+    &::before {
+      @apply content-[""] block h-[1px] w-[40%] m-auto bg-white relative transition-transform duration-300 z-[99];
+    }
+
+    &::after {
+      top: -5px;
+    }
+
+    &::before {
+      top: 5px;
+    }
+  }
+  .burgerActive {
+    &::after {
+      transform: rotate(45deg);
+      top: -1px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+
+  /* Button */
+  .btn:hover p {
+    @apply text-light-1;
+  }
+
+  /* Category */
+  .category:last-of-type {
+    @apply border-b-[1px] border-light-3;
+  }
+  .category:hover h2 {
+    @apply opacity-85 translate-x-[-20px] text-green;
+  }
+  .category:hover p {
+    @apply opacity-85 translate-x-[20px] text-green;
+  }
+
+  /* Category Modal Slider */
+  .categoryModalSlider {
+    transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+}
